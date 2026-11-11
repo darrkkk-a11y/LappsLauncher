@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/ios_bg">
+
+    <TextView android:id="@+id/largeTitle" style="@style/Ios.LargeTitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="@string/tab_files" android:paddingHorizontal="20dp" android:paddingTop="16dp"/>
+
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none" android:paddingHorizontal="16dp" android:clipToPadding="false">
+        <LinearLayout android:id="@+id/breadcrumb" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"/>
+    </HorizontalScrollView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/refresh"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/list"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clipToPadding="false" android:paddingHorizontal="16dp" android:paddingBottom="16dp"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView android:id="@+id/empty" style="@style/Ios.Subtitle"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:visibility="gone" android:padding="32dp"
+        android:text="@string/empty_dir"/>
+</LinearLayout>

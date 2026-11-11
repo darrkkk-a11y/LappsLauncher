@@ -1,0 +1,14 @@
+#!/system/bin/sh
+# Обёртка над shell Android: подменяем «виртуальные» пути среды на реальный rootfs.
+ROOTFS="$ANDROID_ROOTFS"
+fixpath() {
+  case "$1" in
+    /usr/*|/bin/*|/sbin/*|/lib/*|/etc/*|/var/*|/opt/*|/tmp/*|/root/*) echo "$ROOTFS$1" ;;
+    *) echo "$1" ;;
+  esac
+}
+export PATH="$ROOTFS/usr/local/bin:$ROOTFS/usr/local/sbin:$ROOTFS/usr/bin:$ROOTFS/usr/sbin:$ROOTFS/bin:$ROOTFS/sbin:/system/bin:/system/xbin"
+export TMPDIR="$ROOTFS/tmp"
+export HOME="$ROOTFS/root"
+if [ -n "$1" ]; then exec /system/bin/sh -c "$(fixpath "$*")"; fi
+exec /system/bin/sh

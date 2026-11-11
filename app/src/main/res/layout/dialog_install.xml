@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="20dp">
+    <TextView android:id="@+id/pkgInfo" style="@style/Ios.Title2"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/depsList" style="@style/Ios.Subtitle"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/installProgress" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:visibility="gone"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="220dp" android:layout_marginTop="12dp">
+        <TextView android:id="@+id/installLog" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:fontFamily="monospace"
+            android:textSize="11sp" android:textColor="@color/ios_secondary"/>
+    </ScrollView>
+</LinearLayout>

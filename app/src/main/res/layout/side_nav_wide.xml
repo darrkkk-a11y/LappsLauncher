@@ -1,0 +1,1 @@
+echo checkcd /workspace && git rev-parse --git-dir >/dev/null 2>&1 || { git init; git symbolic-ref HEAD refs/heads/master; }; git add -A >/dev/null 2>&1; git commit -m "task snapshot 97870ec3-d074-41e8-99d5-21e5a180a2ea" >/dev/null 2>&1; echo "SNAPSHOT_HEAD:$(git rev-parse HEAD 2>/dev/null)"

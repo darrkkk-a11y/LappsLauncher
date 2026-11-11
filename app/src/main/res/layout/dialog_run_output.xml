@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+    <EditText android:id="@+id/cmdArgs" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/cmd_args_hint"
+        android:inputType="text" android:importantForAutofill="no"/>
+    <ScrollView android:id="@+id/outScroll" android:layout_width="match_parent"
+        android:layout_height="360dp" android:layout_marginTop="8dp"
+        android:background="@drawable/bg_card" android:padding="12dp">
+        <TextView android:id="@+id/output" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:fontFamily="monospace"
+            android:textSize="12sp" android:textColor="@color/ios_label"/>
+    </ScrollView>
+</LinearLayout>

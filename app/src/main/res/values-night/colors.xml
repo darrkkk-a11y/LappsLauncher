@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Тёмная палитра iOS -->
+    <color name="ios_bg">#000000</color>
+    <color name="ios_card">#1C1C1E</color>
+    <color name="ios_label">#FFFFFF</color>
+    <color name="ios_secondary">#98989F</color>
+    <color name="ios_sep">#38383A</color>
+    <color name="tab_inactive">#8E8E93</color>
+</resources>

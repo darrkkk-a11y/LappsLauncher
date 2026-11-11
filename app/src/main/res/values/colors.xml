@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Палитра iOS / iPadOS -->
+    <color name="ios_bg">#F2F2F7</color>            <!-- systemGroupedBackground -->
+    <color name="ios_card">#FFFFFF</color>          <!-- secondarySystemGroupedBackground -->
+    <color name="ios_label">#1C1C1E</color>
+    <color name="ios_secondary">#8E8E93</color>
+    <color name="ios_blue">#007AFF</color>
+    <color name="ios_green">#34C759</color>
+    <color name="ios_red">#FF3B30</color>
+    <color name="ios_orange">#FF9500</color>
+    <color name="ios_sep">#E5E5EA</color>           <!-- separator -->
+    <color name="tab_inactive">#999999</color>
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deb Runner</string>
+
+    <!-- Вкладки -->
+    <string name="tab_files">Файлы</string>
+    <string name="tab_packages">Пакеты</string>
+    <string name="tab_apps">Приложения</string>
+    <string name="tab_settings">Настройки</string>
+
+    <!-- Онбординг -->
+    <string name="ob_title">Добро пожаловать в Deb Runner</string>
+    <string name="ob_text">Приложение установит среду Debian (без root): базовые пакеты, файловую систему и менеджер пакетов. Это займёт несколько минут и потребует интернет.</string>
+    <string name="ob_start">Начать настройку</string>
+    <string name="ob_skip">Пропустить</string>
+    <string name="ob_done">Среда готова</string>
+    <string name="ob_step_arch">Определение архитектуры…</string>
+    <string name="ob_step_base">Загрузка базовых пакетов…</string>
+    <string name="ob_step_install">Установка пакетов…</string>
+    <string name="ob_step_index">Обновление индексов apt…</string>
+    <string name="ob_start_over">Повторить настройку</string>
+
+    <!-- Файлы -->
+    <string name="open_deb">Установить .deb</string>
+    <string name="install">Установить</string>
+    <string name="cancel">Отмена</string>
+    <string name="empty_dir">Папка пуста</string>
+    <string name="storage_home">Хранилище</string>
+
+    <!-- Пакеты -->
+    <string name="installed">Установлено</string>
+    <string name="available">Доступно</string>
+    <string name="search_hint">Поиск пакетов</string>
+    <string name="apt_update">apt update</string>
+    <string name="upgrade_all">Обновить все</string>
+    <string name="remove">Удалить</string>
+    <string name="run">Запустить</string>
+    <string name="pkg_details">Подробнее</string>
+    <string name="no_packages">Нет установленных пакетов</string>
+    <string name="update_available">Есть обновления</string>
+
+    <!-- Приложения -->
+    <string name="apps_env">Программы из среды</string>
+    <string name="apps_android">Приложения Android</string>
+    <string name="no_executables">Установите пакеты с исполняемыми файлами (hello, neofetch, vim…)</string>
+
+    <!-- Установка -->
+    <string name="install_progress">Установка</string>
+    <string name="install_log">Журнал</string>
+    <string name="deps_needed">Будут доустановлены зависимости</string>
+
+    <!-- Настройки -->
+    <string name="settings_env">Среда</string>
+    <string name="settings_mirror">Зеркало Debian</string>
+    <string name="settings_dist">Релиз</string>
+    <string name="settings_reset">Сброс среды</string>
+    <string name="settings_reset_q">Удалить все установленные пакеты и настройки среды?</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_storage">Занято средой</string>
+    <string name="dex_hint">Для DeX: откройте приложение на рабочем столе — интерфейс адаптируется под ширину окна.</string>
+
+    <string-array name="dist_options">
+        <item>trixie</item><item>bookworm</item><item>sid</item>
+    </string-array>
+    <string name="architecture">Архитектура среды</string>
+    <string name="cmd_args_hint">Аргументы команды</string>
+    <string name="ok">ОК</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="installing_fmt">Установка %1$s…</string>
+    <string name="deps_fmt">Зависимости: %1$s</string>
+    <string name="nodeps_fmt">Зависимостей нет</string>
+    <string name="pkg_count_fmt">Установлено: %1$d</string>
+    <string name="avail_count_fmt">Доступно в реестре: %1$d</string>
+    <string name="search_results_fmt">Найдено: %1$d</string>
+    <string name="run_output_fmt">Результат: %1$s (код %2$d)</string>
+    <string name="storage_fmt">%1$.1f МБ</string>
+    <string name="version_fmt">Deb Runner v%1$s • Debian %2$s (%3$s)</string>
+    <string name="perm_needed">Для доступа ко всем файлам разрешите хранение во вкладке «Файлы» или используйте SAF.</string>
+    <string name="pick_file">Выбрать файл</string>
+    <string name="up">Вверх</string>
+    <string name="env_not_ready">Среда не настроена. Выполните первичную настройку в Настройках.</string>
+</resources>
