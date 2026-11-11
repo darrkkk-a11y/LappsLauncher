@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_bg">
+
+    <!-- Боковая панель для широких экранов (DeX / планшет), скрыта на телефоне -->
+    <LinearLayout
+        android:id="@+id/sideNav"
+        android:layout_width="260dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingTop="24dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView style="@style/Ios.LargeTitle" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="26sp"
+            android:text="@string/app_name" android:paddingBottom="20dp"/>
+
+        <LinearLayout android:id="@+id/sideFiles" style="@style/SideNavItem">
+            <ImageView style="@style/SideNavIcon" android:src="@drawable/ic_folder"/>
+            <TextView style="@style/SideNavLabel" android:text="@string/tab_files"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/sidePackages" style="@style/SideNavItem">
+            <ImageView style="@style/SideNavIcon" android:src="@drawable/ic_box"/>
+            <TextView style="@style/SideNavLabel" android:text="@string/tab_packages"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/sideApps" style="@style/SideNavItem">
+            <ImageView style="@style/SideNavIcon" android:src="@drawable/ic_terminal"/>
+            <TextView style="@style/SideNavLabel" android:text="@string/tab_apps"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/sideSettings" style="@style/SideNavItem">
+            <ImageView style="@style/SideNavIcon" android:src="@drawable/ic_settings"/>
+            <TextView style="@style/SideNavLabel" android:text="@string/tab_settings"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/sideNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"/>
+
+    <!-- Плашка фоновой установки -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/installBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toEndOf="@id/sideNav"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:padding="14dp">
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/bannerSpinner"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:indeterminate="true" app:indicatorSize="22dp" app:trackThickness="3dp"/>
+            <TextView android:id="@+id/bannerText" style="@style/Ios.Title2"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="12dp"
+                android:maxLines="1" android:ellipsize="end" android:text="…"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom bar в стиле iOS для телефона/портрета -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/ios_card"
+        android:elevation="12dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include android:id="@+id/tabFiles" layout="@layout/item_tab"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+        <include android:id="@+id/tabPackages" layout="@layout/item_tab"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+        <include android:id="@+id/tabApps" layout="@layout/item_tab"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+        <include android:id="@+id/tabSettings" layout="@layout/item_tab"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

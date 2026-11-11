@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/ios_bg">
+
+    <TextView style="@style/Ios.LargeTitle" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/tab_packages"
+        android:paddingHorizontal="20dp" android:paddingTop="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp" android:layout_marginTop="8dp"
+        android:hint="@string/search_hint" app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp" app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp" app:startIconDrawable="@android:drawable/ic_menu_search">
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/search"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:imeOptions="actionSearch" android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.chip.ChipGroup android:id="@+id/chips"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp" android:paddingVertical="8dp" app:singleSelection="true">
+        <com.google.android.material.chip.Chip android:id="@+id/chipInstalled" style="@style/Ios.Chip"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/installed" android:checked="true"/>
+        <com.google.android.material.chip.Chip android:id="@+id/chipAvailable" style="@style/Ios.Chip"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/available"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingHorizontal="16dp" android:gravity="center_vertical">
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnUpdate" style="@style/Ios.Button"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/apt_update"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnUpgrade" style="@style/Ios.Button"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp"
+            android:text="@string/upgrade_all"/>
+        <TextView android:id="@+id/countLabel" style="@style/Ios.Subtitle"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/refresh"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:layout_marginTop="6dp">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/list"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clipToPadding="false" android:paddingHorizontal="16dp" android:paddingBottom="16dp"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

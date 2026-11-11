@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стиль в духе iOS/iPadOS: светлый фон групп, белые карточки, large title -->
+    <style name="Theme.DebRunner" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/ios_bg</item>
+        <item name="android:navigationBarColor">@color/ios_bg</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="colorPrimary">@color/ios_blue</item>
+        <item name="colorSecondary">@color/ios_blue</item>
+        <item name="colorSurface">@color/ios_card</item>
+        <item name="android:colorBackground">@color/ios_bg</item>
+        <item name="colorOnSurface">@color/ios_label</item>
+        <item name="materialCardViewStyle">@style/Ios.Card</item>
+    </style>
+
+    <style name="Ios.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/ios_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Ios.LargeTitle" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/ios_label</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="Ios.Title2" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/ios_label</item>
+    </style>
+
+    <style name="Ios.Subtitle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/ios_secondary</item>
+    </style>
+
+    <style name="Ios.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/ios_blue</item>
+    </style>
+
+    <style name="Ios.Button.Red" parent="Ios.Button">
+        <item name="backgroundTint">@color/ios_red</item>
+    </style>
+
+    <style name="Ios.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipCornerRadius">18dp</item>
+    </style>
+    <style name="SideNavItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="SideNavIcon">
+        <item name="android:layout_width">26dp</item>
+        <item name="android:layout_height">26dp</item>
+    </style>
+    <style name="SideNavLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">14dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/ios_label</item>
+    </style>
+    <style name="SettingRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingHorizontal">16dp</item>
+    </style>
+    <style name="SettingLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/ios_label</item>
+    </style>
+    <style name="SettingValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/ios_secondary</item>
+        <item name="android:maxWidth">220dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">middle</item>
+    </style>
+    <style name="SettingSep">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.7dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:background">@color/ios_sep</item>
+    </style>
+    <style name="SettingAction">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="Ios.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/Ios.Dialog.Shape</item>
+    </style>
+    <style name="Ios.Dialog.Shape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+</resources>

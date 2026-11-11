@@ -1,0 +1,18 @@
+#!/system/bin/sh
+# Запуск программы из rootfs с правильным PATH/TMPDIR/HOME.
+# Использование: runprog <имя-или-путь> [аргументы...]
+R="$ANDROID_ROOTFS"
+mkdir -p "$R/tmp" "$R/proc" "$R/dev" "$R/root" "$R/etc" 2>/dev/null
+[ -e "$R/dev/null" ] || mknod "$R/dev/null" c 1 3 2>/dev/null || ln -sf /dev/null "$R/dev/null" 2>/dev/null
+[ -e "$R/dev/zero" ] || ln -sf /dev/zero "$R/dev/zero" 2>/dev/null
+export PATH="$R/usr/local/bin:$R/usr/local/sbin:$R/usr/bin:$R/usr/sbin:$R/bin:$R/sbin"
+export LD_LIBRARY_PATH="$R/usr/lib:$R/lib:$R/usr/lib/$DEB_ARCH:$R/lib/$DEB_ARCH"
+export TMPDIR="$R/tmp" HOME="$R/root" LANG=C.UTF-8 TERM=xterm-256color
+BIN="$1"; shift
+case "$BIN" in
+  /*) TARGET="$R$BIN" ;;
+  *)  TARGET=$(command -v "$BIN"); [ -n "$TARGET" ] && TARGET="$R$TARGET" ;;
+esac
+[ -x "$TARGET" ] || { echo "deb-runner: не найдено: $BIN" >&2; exit 127; }
+cd "$R"
+exec chroot "$R" "/$BIN" "$@" 2>/dev/null || exec "$TARGET" "$@"
